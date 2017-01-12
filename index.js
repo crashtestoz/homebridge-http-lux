@@ -8,7 +8,7 @@ const DEF_MIN_LUX = 0,
 module.exports = function (homebridge) {
    Service = homebridge.hap.Service;
    Characteristic = homebridge.hap.Characteristic;
-   homebridge.registerAccessory("homebridge-http-lux", "HttpLux", HttpLux);
+   homebridge.registerAccessory("homebridge-http-lux", "HttpLux", HttpLux, true);
 }
 
 
