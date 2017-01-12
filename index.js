@@ -67,7 +67,7 @@ HttpLux.prototype = {
 
       this.lightLevelService = new Service.LightSensor(this.name);
       this.lightLevelService
-         .getCharacteristic(Characteristic.CurrentLightLevel)
+         .getCharacteristic(Characteristic.CurrentAmbientLightLevel)
          .on('get', this.getState.bind(this))
          .setProps({
              minValue: this.minLux,
