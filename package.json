@@ -1,6 +1,6 @@
 {
   "name": "homebridge-http-lux",
-  "version": "0.1.0",
+  "version": "0.6.0",
   "description": "http light sensor plugin for homebridge. Requires additional hardware.",
   "main": "index.js",
   "scripts": {
@@ -13,10 +13,15 @@
   "keywords": [
     "homebridge-plugin"
   ],
-  "author": "Peter Chodyra <projects@candco.com.au>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/crashtestoz/homebridge-http-lux/issues"
   },
-  "homepage": "https://github.com/crashtestoz/homebridge-http-lux#readme"
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  },
+  "dependencies": {
+    "request": "^2.65.0"
+  }
 }
