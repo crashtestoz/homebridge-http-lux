@@ -8,7 +8,7 @@ const DEF_MIN_LUX = 0,
 module.exports = function (homebridge) {
    Service = homebridge.hap.Service;
    Characteristic = homebridge.hap.Characteristic;
-   homebridge.registerAccessory("homebridge-http-lux", "HttpLux", HttpLux, true);
+   homebridge.registerAccessory("homebridge-http-lux", "HttpLux", HttpLux);
 }
 
 
@@ -19,12 +19,12 @@ function HttpLux(log, config) {
    this.url = config["url"];
    this.http_method = config["http_method"] || "GET";
    this.name = config["name"];
-   this.manufacturer = config["manufacturer"] || "@crashtestoz manufacturer";
-   this.model = config["model"] || "Model not available";
-   this.serial = config["serial"] || "Non-defined serial";
+   this.manufacturer = config["manufacturer"] || "@crashtestoz";
+   this.model = config["model"] || "nodeMCU multi sensor DIY";
+   this.serial = config["serial"] || "20170101";
    this.timeout = config["timeout"] || DEF_TIMEOUT;
-   this.minLuminescence = config["min_lux"] || DEF_MIN_LUX;
-   this.maxLuminescence = config["max_lux"] || DEF_MAX_LUX;
+   this.minLux = config["min_lux"] || DEF_MIN_LUX;
+   this.maxLux = config["max_lux"] || DEF_MAX_LUX;
 }
 
 HttpLux.prototype = {
@@ -35,7 +35,7 @@ HttpLux.prototype = {
          method: this.http_method,
          timeout: this.timeout
       };
-      
+
       //Parse the request sent via http
       this.log('Requesting light level on "' + ops.uri + '", method ' + ops.method);
       request(ops, (error, res, body) => {
