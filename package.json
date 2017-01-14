@@ -11,9 +11,7 @@
     "url": "git://github.com/crashtestoz/homebridge-http-lux.git"
   },
   "keywords": [
-    "homebridge",
-    "homebridge-http",
-    "luminescence"
+    "homebridge-plugin"
   ],
   "author": "Peter Chodyra <projects@candco.com.au>",
   "license": "ISC",
