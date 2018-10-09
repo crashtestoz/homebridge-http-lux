@@ -2,7 +2,7 @@ var Service, Characteristic;
 var request = require('request');
 
 const DEF_MIN_LUX = 0,
-      DEF_MAX_LUX = 255,
+      DEF_MAX_LUX = 800,
       DEF_TIMEOUT = 5000;
 
 module.exports = function (homebridge) {
