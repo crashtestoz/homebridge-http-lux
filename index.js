@@ -3,7 +3,7 @@ var request = require('request');
 
 const DEF_MIN_LUX = 0,
       DEF_MAX_LUX = 800,
-      DEF_TIMEOUT = 5000;
+      DEF_TIMEOUT = 3000;
 
 module.exports = function (homebridge) {
    Service = homebridge.hap.Service;
@@ -21,7 +21,7 @@ function HttpLux(log, config) {
    this.name = config["name"];
    this.manufacturer = config["manufacturer"] || "@crashtestoz";
    this.model = config["model"] || "nodeMCU multi sensor DIY";
-   this.serial = config["serial"] || "20170101";
+   this.serial = config["serial"] || "20181011";
    this.timeout = config["timeout"] || DEF_TIMEOUT;
    this.minLux = config["min_lux"] || DEF_MIN_LUX;
    this.maxLux = config["max_lux"] || DEF_MAX_LUX;
